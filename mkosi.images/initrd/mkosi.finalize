@@ -1,0 +1,53 @@
+#!/bin/sh
+
+strip_bin() {
+	## Remember, the `strip` command is from the host OS.
+	if [ "$(file --brief --mime-encoding "$1")" = "binary" ]; then
+		strip --strip-unneeded "$1" > /dev/null 2>&1; fi
+}
+
+strip_all_bins() {
+	# Strip all binaries under `/usr/{bin,lib}` (which is all of them).
+	## Trims ~16.2MiB.
+	printf "Stripping all binaries...\n"
+	find "$BUILDROOT"/usr/{bin,lib}/ -xdev -type f \
+		-not \( -path "*lib/firmware*" -prune \) \
+		-not \( -path "*lib/modules*" -prune \) \
+		! -empty \
+		! -iname "*.sh" \
+		! -iname "*.csh" \
+		! -iname "*.js" \
+		! -iname "*.css" \
+		! -iname "*.xml" \
+		! -iname "*.html" \
+		! -iname "*.txt" \
+		! -iname "*.conf" \
+		! -iname "*.json" \
+		! -iname "*.path" \
+		! -iname "*.link" \
+		! -iname "*.mount" \
+		! -iname "*.timer" \
+		! -iname "*.slice" \
+		! -iname "*.socket" \
+		! -iname "*.target" \
+		! -iname "*.preset" \
+		! -iname "*.service" \
+		! -iname "*.network" \
+		! -iname "*.example" \
+		! -iname "*.tar" \
+		! -iname "*.gz" \
+		! -iname "*.xz" \
+		! -iname "*.bz2" \
+		! -iname "*.zst" \
+		! -iname "*.gpg" \
+		-print0 |
+		xargs -0 -P 16 -I % sh -c 'strip_bin "$@"' _ %
+}
+
+## The `find` command in the `strip_all_bins` function won't work otherwise.
+export -f strip_bin
+
+## Run the `strip_all_bins` function in parallel to save blocking other commands.
+strip_all_bins &
+
+wait
