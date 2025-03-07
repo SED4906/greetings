@@ -1,5 +1,5 @@
-greetings
-greetings.*
+greetings_*
+greetings_*.*
 initrd
 initrd.*
 mkosi.local.conf
