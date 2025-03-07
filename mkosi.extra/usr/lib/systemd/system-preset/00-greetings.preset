@@ -1,0 +1,6 @@
+enable firstbootsetup.service
+enable NetworkManager.service
+enable fluxbox@tty1.service
+enable home.mount
+enable etc.mount
+enable greetings-system-update.timer

@@ -1,0 +1,27 @@
+[Unit]
+Description=Fluxbox on %I
+After=systemd-user-sessions.service
+ConditionPathExists=/dev/tty0
+Wants=dbus.socket systemd-logind.service
+After=dbus.socket systemd-logind.service
+Conflicts=getty@%i.service
+After=getty@%i.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/user
+ExecStart=/usr/bin/startx
+Restart=always
+User=user
+UtmpIdentifier=%I
+UtmpMode=user
+TTYPath=/dev/%I
+TTYReset=yes
+TTYVHangup=yes
+TTYVTDisallocate=yes
+StandardInput=tty-fail
+PAMName=fluxbox
+
+[Install]
+WantedBy=graphical.target
+DefaultInstance=tty7

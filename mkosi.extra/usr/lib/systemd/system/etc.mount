@@ -1,0 +1,21 @@
+[Unit]
+Description=User Home Directories /home
+Documentation=https://systemd.io/HOME_DIRECTORY/
+Documentation=man:file-hierarchy(7)
+
+ConditionPathIsSymbolicLink=!/etc
+
+DefaultDependencies=no
+Conflicts=umount.target
+Before=local-fs.target umount.target
+After=systemd-repart.service
+RequiresMountsFor=/var/
+
+[Mount]
+What=overlay
+Where=/etc/
+Type=overlay
+Options=lowerdir=/etc,upperdir=/var/etc,workdir=/var/.etc-work
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=Update System
+After=var.mount
+
+[Service]
+Type=oneshot
+ExecStart=mkdir -p /var/updater/
+ExecStart=git clone https://github.com/SED4906/greetings /var/updater/greetings
+ExecStart=mkosi -C /var/updater/greetings
+ExecStart=/usr/lib/systemd/systemd-sysupdate
+ExecStart=rm -rf /var/updater/greetings
+
+[Install]
+WantedBy=graphical.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=Update System
+After=var.mount
+
+[Timer]
+OnBootSec=15min
+OnUnitActiveSec=2h
+OnCalendar=Sat
+RandomizedDelaySec=4h
+Persistent=yes
+
+[Install]
+WantedBy=timers.target

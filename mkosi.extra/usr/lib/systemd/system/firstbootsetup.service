@@ -1,0 +1,11 @@
+[Unit]
+Description=Ensure user home directory exists
+Before=systemd-user-sessions.service
+After=home.mount
+
+[Service]
+Type=oneshot
+ExecStart=install -d -o user -g user /var/home/user
+
+[Install]
+WantedBy=graphical.target
