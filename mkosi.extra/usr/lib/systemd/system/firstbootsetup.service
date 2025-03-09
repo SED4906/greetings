@@ -6,6 +6,8 @@ After=home.mount
 [Service]
 Type=oneshot
 ExecStart=install -d -o user -g user /var/home/user
+ExecStart=install -d -o updater -g updater /var/home/updater
+ExecStart=install -d -o root -g root /var/lib/pacman
 
 [Install]
 WantedBy=graphical.target
