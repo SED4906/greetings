@@ -1,3 +1,4 @@
 #!/bin/sh
 systemctl enable fluxbox@tty1.service
 useradd -G input,wheel -d /home/user -M user
+useradd -G wheel -d /home/updater -M updater
