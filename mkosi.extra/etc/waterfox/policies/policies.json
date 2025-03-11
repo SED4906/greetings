@@ -17,9 +17,6 @@
     "PasswordManagerEnabled": false,
     "AutofillAddressEnabled": false,
     "AutofillCreditCardEnabled": false,
-    "DisablePocket": true,
-    "SearchEngines": {
-      "Default": "DuckDuckGo",
-    }
+    "DisablePocket": true
   }
 }

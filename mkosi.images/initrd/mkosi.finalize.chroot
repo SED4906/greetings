@@ -1,0 +1,2 @@
+#!/bin/sh
+systemctl mask tpm2.target

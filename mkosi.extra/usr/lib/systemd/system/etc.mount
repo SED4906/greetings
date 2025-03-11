@@ -1,6 +1,5 @@
 [Unit]
-Description=User Home Directories /home
-Documentation=https://systemd.io/HOME_DIRECTORY/
+Description=System Configuation Directories /etc
 Documentation=man:file-hierarchy(7)
 
 ConditionPathIsSymbolicLink=!/etc
@@ -15,7 +14,7 @@ RequiresMountsFor=/var/
 What=overlay
 Where=/etc/
 Type=overlay
-Options=lowerdir=/etc,upperdir=/var/etc,workdir=/var/.etc-work
+Options=lowerdir=/etc,upperdir=/var/etc,workdir=/var/.etc-work,index=off,metacopy=off
 
 [Install]
 WantedBy=default.target

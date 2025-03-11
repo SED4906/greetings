@@ -1,5 +1,6 @@
 [Transfer]
 ProtectVersion=%A
+Verify=false
 
 [Target]
 Type=partition
@@ -10,6 +11,6 @@ PartitionFlags=0
 ReadOnly=1
 
 [Source]
-Type=regular-file
-Path=/home/updater/greetings/
+Type=url-file
+Path=http://rotom.lan/greetings/
 MatchPattern=greetings_@v.root-%a.@u.raw
