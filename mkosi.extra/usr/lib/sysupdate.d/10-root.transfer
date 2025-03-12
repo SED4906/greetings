@@ -12,5 +12,5 @@ ReadOnly=1
 
 [Source]
 Type=url-file
-Path=http://rotom.lan/greetings/
+Path=http://greetings-update-server.lan/
 MatchPattern=greetings_@v.root-%a.@u.raw
