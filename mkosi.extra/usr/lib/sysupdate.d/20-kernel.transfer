@@ -1,0 +1,19 @@
+[Transfer]
+ProtectVersion=%A
+Verify=false
+
+[Target]
+Type=regular-file
+Path=/EFI/Linux
+MatchPattern=greetings_@v+@l-@d.efi \
+             greetings_@v+@l.efi \
+             greetings_@v.efi
+Mode=0444
+TriesLeft=3
+TriesDone=0
+InstancesMax=2
+
+[Source]
+Type=url-file
+Path=http://greetings-update-server.lan/
+MatchPattern=greetings_@v.efi
