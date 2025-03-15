@@ -1,3 +1,6 @@
 cbatticon &
 nm-applet &
+feh --bg-fill /usr/share/backgrounds/biochemistry_wallpaper.jxl &
+dunst &
+notify-send 'Greetings!' 'Right click on the wallpaper to bring up the menu.' &
 exec fluxbox

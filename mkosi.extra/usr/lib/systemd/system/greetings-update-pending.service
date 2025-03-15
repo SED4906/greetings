@@ -1,0 +1,9 @@
+[Unit]
+Description=Notify user of pending update
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/greetings-update-pending
+
+[Install]
+WantedBy=graphical.target

@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/lib/systemd/systemd-sysupdate pending && systemd-run --machine=user@.host --user notify-send 'Update Pending' "$(/usr/lib/systemd/systemd-sysupdate pending 2>&1 | tail -n1)"

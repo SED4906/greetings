@@ -1,10 +1,10 @@
 [begin] (Greetings)
 [encoding] {UTF-8}
     [exec] (Launch...) {rofi -show drun}
-    [exec] (Browser) {waterfox}
-    [exec] (Media Player) {vlc}
+    [exec] (Web Browser) {waterfox}
     [exec] (File Manager) {thunar}
 [submenu] (Accessories)
+    [exec] (Media Player) {vlc}
     [exec] (Text Editor) {mousepad}
     [exec] (Terminal) {alacritty}
     [exec] (Manual Pages) {mangl}
