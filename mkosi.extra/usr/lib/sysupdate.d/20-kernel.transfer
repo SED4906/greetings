@@ -5,6 +5,7 @@ Verify=false
 [Target]
 Type=regular-file
 Path=/EFI/Linux
+PathRelativeTo=boot
 MatchPattern=greetings_@v+@l-@d.efi \
              greetings_@v+@l.efi \
              greetings_@v.efi
