@@ -1,6 +1,11 @@
 cbatticon &
 nm-applet &
-feh --bg-fill /usr/share/backgrounds/biochemistry_wallpaper.jxl &
 dunst &
-notify-send 'Greetings!' 'Right click on the wallpaper to bring up the menu.' &
-exec fluxbox
+fluxbox &
+fbpid=$!
+sleep 1
+{
+feh --bg-fill /usr/share/backgrounds/biochemistry_wallpaper.jxl &
+notify-send -t 120000 'Greetings!' 'Right click on the wallpaper to bring up the menu.' &
+} &
+wait $fbpid
