@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Exec=/usr/bin/greetings-flatpakref-installer %u
+Terminal=false
+X-MultipleArgs=false
+DBusActivatable=false
+MimeType=application/vnd.flatpak.ref;application/octet-stream;
+StartupNotify=true
+Name=Flatpak Installer
+NoDisplay=true

@@ -1,0 +1,2 @@
+#!/bin/bash
+xmessage -center -buttons OK:0,Cancel:1 Install "$1"? You will be notified after installation has completed. && flatpak install -y $1 && notify-send -t 120000 'Installation Completed' 'Select "Launch..." from the menu to find a complete list of installed software.'
