@@ -1,7 +1,3 @@
 #!/bin/sh
-xdg-mime default greetings-flatpakref-installer.desktop application/vnd.flatpak.ref
-update-desktop-database /usr/share/applications
-systemctl enable fluxbox@tty1.service
-useradd -G input,wheel -d /home/user -M user
 systemctl mask tpm2.target
 chmod u+s /usr/bin/bwrap

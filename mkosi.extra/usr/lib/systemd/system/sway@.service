@@ -1,5 +1,5 @@
 [Unit]
-Description=Fluxbox on %I
+Description=Sway on %I
 After=systemd-user-sessions.service
 ConditionPathExists=/dev/tty0
 Wants=dbus.socket systemd-logind.service
@@ -10,7 +10,7 @@ After=getty@%i.service
 [Service]
 Type=simple
 WorkingDirectory=/home/user
-ExecStart=/usr/bin/startx
+ExecStart=/usr/bin/sway
 Restart=always
 User=user
 UtmpIdentifier=%I
@@ -20,8 +20,8 @@ TTYReset=yes
 TTYVHangup=yes
 TTYVTDisallocate=yes
 StandardInput=tty-fail
-PAMName=fluxbox
+PAMName=sway
 
 [Install]
 WantedBy=graphical.target
-DefaultInstance=tty7
+DefaultInstance=tty1

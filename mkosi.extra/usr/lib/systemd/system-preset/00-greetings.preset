@@ -1,6 +1,5 @@
-enable firstbootsetup.service
 enable NetworkManager.service
-enable fluxbox@tty1.service
+enable sway@.service
 enable home.mount
 enable etc.mount
 enable systemd-sysupdate.timer

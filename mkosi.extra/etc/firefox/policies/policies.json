@@ -17,6 +17,15 @@
     "PasswordManagerEnabled": false,
     "AutofillAddressEnabled": false,
     "AutofillCreditCardEnabled": false,
-    "DisablePocket": true
+    "DisablePocket": true,
+    "FirefoxHome": {
+      "Search": true,
+      "TopSites": true,
+      "SponsoredTopSites": false,
+      "Highlights": false,
+      "Pocket": false,
+      "SponsoredPocket": false,
+      "Snippets": false
+    }
   }
 }
