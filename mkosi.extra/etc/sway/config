@@ -193,6 +193,7 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
+    mode invisible
     position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
@@ -206,10 +207,9 @@ bar {
     }
 }
 
-exec xfce4-session
+exec sfwbar
 exec mako
 exec nm-applet
-exec cbatticon
 
 for_window [all] floating enable
 

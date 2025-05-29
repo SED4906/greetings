@@ -1,23 +1,23 @@
 #!/bin/sh
 git pull
-cd ../cbatticon-git
-if git pull | grep -q 'Already up to date.'; then
-echo cbatticon: no updates
-else
-rm cbatticon-git-*.pkg.tar.zst ../greetings/mkosi.packages/cbatticon-git-*.pkg.tar.zst
-makepkg -s --noconfirm
-rm cbatticon-git-debug-*.pkg.tar.zst
-cp cbatticon-git-*.pkg.tar.zst ../greetings/mkosi.packages/
-fi
-cd ../mangl
-if git pull | grep -q 'Already up to date.'; then
-echo mangl: no updates
-else
-rm mangl-*.pkg.tar.zst ../greetings/mkosi.packages/mangl-*.pkg.tar.zst
-makepkg -s --noconfirm
-rm mangl-debug-*.pkg.tar.zst
-cp mangl-*.pkg.tar.zst ../greetings/mkosi.packages/
-fi
+# cd ../cbatticon-git
+# if git pull | grep -q 'Already up to date.'; then
+# echo cbatticon: no updates
+# else
+# rm cbatticon-git-*.pkg.tar.zst ../greetings/mkosi.packages/cbatticon-git-*.pkg.tar.zst
+# makepkg -s --noconfirm
+# rm cbatticon-git-debug-*.pkg.tar.zst
+# cp cbatticon-git-*.pkg.tar.zst ../greetings/mkosi.packages/
+# fi
+# cd ../mangl
+# if git pull | grep -q 'Already up to date.'; then
+# echo mangl: no updates
+# else
+# rm mangl-*.pkg.tar.zst ../greetings/mkosi.packages/mangl-*.pkg.tar.zst
+# makepkg -s --noconfirm
+# rm mangl-debug-*.pkg.tar.zst
+# cp mangl-*.pkg.tar.zst ../greetings/mkosi.packages/
+# fi
 cd ../waterfox-bin
 if git pull | grep -q 'Already up to date.'; then
 echo waterfox-bin: no updates
@@ -26,6 +26,15 @@ rm waterfox-bin-*.pkg.tar.zst ../greetings/mkosi.packages/waterfox-bin-*.pkg.tar
 makepkg -s --noconfirm
 rm waterfox-bin-debug-*.pkg.tar.zst
 cp waterfox-bin-*.pkg.tar.zst ../greetings/mkosi.packages/
+fi
+cd ../sfwbar
+if git pull | grep -q 'Already up to date.'; then
+echo sfwbar: no updates
+else
+rm sfwbar-*.pkg.tar.zst ../greetings/mkosi.packages/sfwbar-*.pkg.tar.zst
+makepkg -s --noconfirm
+rm sfwbar-debug-*.pkg.tar.zst
+cp sfwbar-*.pkg.tar.zst ../greetings/mkosi.packages/
 fi
 cd ../greetings
 rm greetings_*
