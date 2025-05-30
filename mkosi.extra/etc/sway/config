@@ -209,7 +209,6 @@ bar {
 
 exec sfwbar
 exec mako
-exec nm-applet
 
 for_window [all] floating enable
 
